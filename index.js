@@ -1,7 +1,14 @@
-const allBtns = document.querySelectorAll('.btn'); 
+ 
+ /* Get out radio buttons based on the name attribue*/ 
+ const allBtns = document.querySelectorAll('[name=rating]'); 
+  /* Add the event litener */ 
+ allBtns.forEach(btn =>{
+  btn.addEventListener('click', function onClick(){
+    document.querySelector("#rating").innerHTML = `Thanks for rating us ${this.value}!`;
+  })
+ }); 
 
-allBtns.forEach(btn => {
-   btn.addEventListener('click', function onClick(){
-    btn.style.backgroundColor = 'orange'; 
- })
-})
+ function ShowAndHide(){
+  document.querySelector('.ratingbox').classList.toggle("hide");
+  document.querySelector('.thankyou').classList.toggle("hide");; 
+}
